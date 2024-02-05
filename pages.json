@@ -1,0 +1,32 @@
+{
+	"pages": [
+		{
+			"path": "pages/index/decode"
+		},
+		{
+			"path": "pages/index/encode"
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "heStudio二维码工具箱",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+				"text": "解码",
+				"pagePath": "pages/index/decode"
+			},
+			{
+				"text": "生码",
+				"pagePath": "pages/index/encode"
+			}
+		]
+	}
+}
