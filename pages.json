@@ -8,16 +8,16 @@
 		}
 	],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
+		"navigationBarTextStyle": "@navigationBarTextStyle",
 		"navigationBarTitleText": "heStudio二维码工具箱",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarBackgroundColor": "@navigationBarBackgroundColor",
+		"backgroundColor": "@backgroundColor"
 	},
 	"uniIdRouter": {},
 	"tabBar": {
-		"color": "#7A7E83",
-		"selectedColor": "#3cc51f",
-		"backgroundColor": "#ffffff",
+		"color": "@tabFontColor",
+		"selectedColor": "@tabSelectedColor",
+		"backgroundColor": "@tabBgColor",
 		"list": [
 			{
 				"text": "解码",

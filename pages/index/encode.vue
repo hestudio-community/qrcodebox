@@ -1,7 +1,7 @@
 <template>
   <view>
     <view class="box">
-      <uni-easyinput v-model="value" class="input" type="textarea" autoHeight placeholder="你可以输入任何内容，包括文字，网页等。"
+      <uni-easyinput v-model="value" class="input" type="textarea" autoHeight :styles="styles" placeholder="你可以输入任何内容，包括文字，网页等。"
         @confirm="makecode" />
       <button :loading="makeloading" class="button" type="primary" hover-class="button-hover" @click="makecode">
         生成
@@ -26,7 +26,10 @@ export default {
       makeloading: false,
       saveloading: false,
       makesuccess: false,
-      showmake: false
+      showmake: false,
+      styles: {
+        color: '#333'
+      }
     }
   },
   methods: {
@@ -54,13 +57,13 @@ export default {
           type: "error"
         })
         // #endif
-		
-		// #ifdef MP-WEIXIN
-		wx.showToast({
-		  title: '内容不能为空',
-		  icon: "error"
-		})
-		// #endif
+
+        // #ifdef MP-WEIXIN
+        wx.showToast({
+          title: '内容不能为空',
+          icon: "error"
+        })
+        // #endif
       }
       this.loading = false
     },
@@ -78,13 +81,13 @@ export default {
               type: "success"
             })
             // #endif
-			
-			// #ifdef MP-WEIXIN
-			wx.showToast({
-			  title: '保存成功',
-			  icon: "success"
-			})
-			// #endif
+
+            // #ifdef MP-WEIXIN
+            wx.showToast({
+              title: '保存成功',
+              icon: "success"
+            })
+            // #endif
           }
         })
       } else {
@@ -98,13 +101,13 @@ export default {
           type: "error"
         })
         // #endif
-		
-		// #ifdef MP-WEIXIN
-		wx.showToast({
-		  title: '保存失败',
-		  icon: "error"
-		})
-		// #endif
+
+        // #ifdef MP-WEIXIN
+        wx.showToast({
+          title: '保存失败',
+          icon: "error"
+        })
+        // #endif
       }
     }
   },

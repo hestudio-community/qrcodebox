@@ -5,7 +5,14 @@
     </button>
     <view class="box" v-show="showresult">
       <text class="text">原始内容</text>
+      <!-- #ifndef MP-WEIXIN -->
       <uni-easyinput v-model="result" disabled type="textarea" autoHeight />
+      <!-- #endif -->
+      <!-- #ifdef MP-WEIXIN -->
+      <view class="infobox">
+        <text user-select >{{ result }}</text>
+      </view>
+      <!-- #endif -->
       <button class="button" hover-class="button-hover" @click="CopyResult">
         复制全部内容
       </button>
@@ -39,13 +46,13 @@ export default {
               type: "error"
             })
             // #endif
-			
-			// #ifdef MP-WEIXIN
-			wx.showToast({
-			  title: '内容空！',
-			  icon: "error"
-			})
-			// #endif
+
+            // #ifdef MP-WEIXIN
+            wx.showToast({
+              title: '内容空！',
+              icon: "error"
+            })
+            // #endif
           }
         }
       })
@@ -64,13 +71,13 @@ export default {
             type: "success"
           })
           // #endif
-		  
-		  // #ifdef MP-WEIXIN
-		  wx.showToast({
-		    title: '复制成功',
-		    icon: "success"
-		  })
-		  // #endif
+
+          // #ifdef MP-WEIXIN
+          wx.showToast({
+            title: '复制成功',
+            icon: "success"
+          })
+          // #endif
         }
       })
     }
@@ -100,6 +107,12 @@ export default {
 
 .text {
   margin: 5px;
+}
+
+.infobox {
+  width: 100%;
+  height: auto;
+  border-style: solid;
 }
 
 ::v-deep .is-disabled {
